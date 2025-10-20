@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+/backend/node_modules/
+/simple-backend/node_modules/
+
+# Build outputs
+/dist
+/build
+/.next
+
+# Environment
+.env
+.env.local
+*.env
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Cache
+.cache/
+node_modules/.vite/
+
+# Backend specific
+simple-backend/events.json
+simple-backend/metrics.json
+backend/venv/
+backend/__pycache__/
