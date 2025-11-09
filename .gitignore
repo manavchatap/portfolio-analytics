@@ -33,3 +33,9 @@ simple-backend/events.json
 simple-backend/metrics.json
 backend/venv/
 backend/__pycache__/
+
+node_modules/
+*.log
+.env
+events.json
+metrics.json

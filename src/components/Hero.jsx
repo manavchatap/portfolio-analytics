@@ -53,7 +53,7 @@ const Hero = () => {
             className="mt-16 flex flex-wrap justify-center gap-8"
           >
             <div className="bg-white px-6 py-4 rounded-lg shadow-md">
-              <p className="text-3xl font-bold text-blue-600">1,247</p>
+              <p className="text-3xl font-bold text-blue-600">27</p>
               <p className="text-gray-600">Total Views</p>
             </div>
             <div className="bg-white px-6 py-4 rounded-lg shadow-md">

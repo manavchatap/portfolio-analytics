@@ -1,41 +1,104 @@
 import { motion } from 'framer-motion';
-import { useScrollTracking } from '../hooks/useAnalytics';
+import { trackClick } from '../utils/analytics';
 
-const ProjectCard = ({ id, title, description, tech, impact, image }) => {
-  useScrollTracking(`project-${id}`);
+const ProjectCard = ({ title, description, tech, impact, image, screenshot, live, github }) => {
+  const handleCardClick = () => {
+    if (live) {
+      trackClick('project_card', title);
+      window.open(live, '_blank');
+    }
+  };
+
+  const handleGithubClick = (e) => {
+    e.stopPropagation(); // Prevent card click when clicking GitHub button
+    trackClick('github_link', title);
+  };
 
   return (
     <motion.div
-      id={`project-${id}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      whileHover={{ y: -5 }}
-      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow"
+      whileHover={{ y: -10, scale: 1.02 }}
+      onClick={handleCardClick}
+      className={`bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all ${
+        live ? 'cursor-pointer' : ''
+      }`}
     >
-      <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
-        <p className="text-white text-6xl">{image}</p>
+      {/* Project Image/Screenshot */}
+      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600">
+        {screenshot ? (
+          // Use actual screenshot if provided
+          <img 
+            src={screenshot} 
+            alt={title}
+            className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+          />
+        ) : (
+          // Fallback to emoji if no screenshot
+          <div className="w-full h-full flex items-center justify-center text-8xl">
+            {image || '🚀'}
+          </div>
+        )}
+        
+        {/* Overlay on hover */}
+        {live && (
+          <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+            <span className="text-white text-xl font-bold opacity-0 hover:opacity-100 transition-opacity">
+              View Project →
+            </span>
+          </div>
+        )}
       </div>
       
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <h3 className="text-2xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition">
+          {title}
+        </h3>
+        <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+          {description}
+        </p>
         
+        {/* Tech Stack */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {tech.map((t, idx) => (
+          {tech && tech.map((t, idx) => (
             <span
               key={idx}
-              className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium"
+              className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded-full"
             >
               {t}
             </span>
           ))}
         </div>
-
-        {/* Impact Metrics */}
-        <div className="mt-4 pt-4 border-t border-gray-200">
-          <p className="text-sm font-semibold text-green-600">{impact}</p>
+        
+        {/* Impact */}
+        {impact && (
+          <div className="bg-green-50 border-l-4 border-green-500 p-3 mb-4">
+            <p className="text-sm text-green-700">
+              <strong>Impact:</strong> {impact}
+            </p>
+          </div>
+        )}
+        
+        {/* Links */}
+        <div className="flex gap-3">
+          {live && (
+            <div className="flex-1 text-center px-4 py-2 bg-blue-600 text-white rounded-lg font-medium text-sm">
+              Live Demo
+            </div>
+          )}
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleGithubClick}
+              className="flex-1 text-center px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition font-medium text-sm"
+            >
+              GitHub
+            </a>
+          )}
         </div>
       </div>
     </motion.div>

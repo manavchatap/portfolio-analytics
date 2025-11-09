@@ -61,7 +61,7 @@ const Skills = () => {
               <div className="flex items-center mb-6">
                 <div className={`w-12 h-12 ${colorClasses[category.color].bg} rounded-lg flex items-center justify-center mr-4`}>
                   <span className={`text-2xl ${colorClasses[category.color].text}`}>
-                    {idx === 0 ? '���' : idx === 1 ? '⚙️' : idx === 2 ? '���' : '���️'}
+                    {idx === 0 ? '🧑‍💻' : idx === 1 ? '⚙️' : idx === 2 ? '📈' : '💻'}
                   </span>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">{category.title}</h3>
