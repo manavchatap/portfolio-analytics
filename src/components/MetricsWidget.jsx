@@ -14,10 +14,10 @@ const MetricsWidget = () => {
   }
 
   const metrics = [
-    { label: 'Total Views', value: 17, color: 'blue' },
-    { label: 'Active Users', value: 1, color: 'green' },
-    { label: 'Top Device', value: Mobile, color: 'purple' },
-    { label: 'Top Location', value: India, color: 'orange' }
+    // { label: 'Total Views', value: data.totalViews, color: 'blue' },
+    // { label: 'Active Users', value: data.activeUsers, color: 'green' },
+    // { label: 'Top Device', value: data.topDevice, color: 'purple' },
+    // { label: 'Top Location', value: data.topGeo, color: 'orange' }
   ];
 
   return (
