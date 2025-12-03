@@ -20,7 +20,7 @@ const Projects = () => {
       tech: ['React', 'TypeScript', 'FastAPI', 'Python', 'Leaflet Maps', 'Chart.js', 'React Router'],
       impact: '328 accidents analyzed across 23 identified black spots with 72% safety score improvement through data-driven insights and community reporting',
       image: '🚦',
-      screenshot: '/projects/project1.png', // Add your screenshot path
+      screenshot: '/public/projects/project1.png', // Add your screenshot path
       live: 'https://saferoute-nagpur.vercel.app/',
       github: 'https://github.com/yourusername/project1'
     },
@@ -31,7 +31,7 @@ const Projects = () => {
       tech: ['React.js', 'Vite', 'React Router', 'SunCalc', 'CSS3 Animations', 'Jean Meeus Algorithms', 'Vercel'],
       impact: 'Successfully deployed comprehensive platform with 4 core calculators (Mulank/Bhagyank, Rashi, Compatibility, Name Numerology), serving detailed personality insights for 9 numerology numbers and 12 zodiac signs with 100% client-side privacy',
       image: '💼',
-      screenshot: '/projects/project2.png', // Add your screenshot path
+      screenshot: '/public/projects/project2.png', // Add your screenshot path
       live: 'https://astro-numerology.vercel.app/',
       github: 'https://github.com/yourusername/portfolio'
     },
@@ -42,7 +42,7 @@ const Projects = () => {
       tech: ['React, TypeScript, Django REST Framework, PostgreSQL'],
       impact: 'ThriftHub addresses critical sustainability challenges by promoting a circular economy where products are reused instead of discarded.',
       image: '💼',
-      screenshot: '/public/projects/project1.png', // Add your screenshot path
+      screenshot: '/public/projects/project3.png', // Add your screenshot path
       live: 'https://thrifthub-frontend.vercel.app/',
       github: 'https://github.com/yourusername/portfolio'
     },
@@ -52,8 +52,8 @@ const Projects = () => {
       description:'LifeLedger is a blockchain-based healthcare platform designed to maintain transparent and tamper-proof organ donation and transplant records.',
       tech: ['React.js','Blockchain','Vercel'],
       impact: 'LifeLedger improves trust and transparency in the organ donation process by eliminating data manipulation and delays. It minimizes fraudulent activities, ensures equitable distribution of organs, and saves lives by speeding up medical decisions through automated and verified record management.',
-      image: '💼',
-      screenshot: '/projects/project2.png', // Add your screenshot path
+      image: '',
+      screenshot: '/projects/project4.png', // Add your screenshot path
       live: 'https://astro-numerology.vercel.app/',
       github: 'https://github.com/yourusername/portfolio'
     }

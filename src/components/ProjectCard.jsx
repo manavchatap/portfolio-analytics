@@ -27,7 +27,7 @@ const ProjectCard = ({ title, description, tech, impact, image, screenshot, live
       }`}
     >
       {/* Project Image/Screenshot */}
-      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600">
+      <div className="relative h-48 overflow-hidden bg-gradient-to-br from-green-600 to-green-100">
         {screenshot ? (
           // Use actual screenshot if provided
           <img 
@@ -44,7 +44,7 @@ const ProjectCard = ({ title, description, tech, impact, image, screenshot, live
         
         {/* Overlay on hover */}
         {live && (
-          <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+          <div className="absolute inset-0 bg-⭐ bg-opacity-0 hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
             <span className="text-white text-xl font-bold opacity-0 hover:opacity-100 transition-opacity">
               View Project →
             </span>
