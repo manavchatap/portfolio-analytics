@@ -58,8 +58,8 @@ const About = () => {
               {/* Hi, I'm <span className="text-blue-600">Manvay Chatap</span> */}
             </h3>
             <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-              A passionate <strong>Full-Stack Web Developer</strong> and <strong>Data Analytics Enthusiast</strong> 
-              currently persuing final year in Btech.
+              A passionate <strong>Full-Stack Web Developer</strong> and <strong>Data Analytics Enthusiast </strong>
+               currently persuing final year in Btech.
             </p>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               I specialize in building modern, data-driven web applications using MERN stack
